@@ -1,8 +1,13 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import PropTypes from "prop-types";
 
 const Header = ({ title }) => {
   const [employees, setEmployees] = useState([])
+
+  Header.propTypes = {
+    title: PropTypes.string.isRequired
+  }
 
   useEffect(() => {
     getEmployees();
