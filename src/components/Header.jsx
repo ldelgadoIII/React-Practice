@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
-
+import Button from "./Button"
 
 const Header = ({ title }) => {
   const [employees, setEmployees] = useState([])
@@ -23,11 +23,9 @@ const Header = ({ title }) => {
   console.log(employees);
 
     return (
-        <header class="header">
+        <header className="header">
           <h1>{title}</h1>
-          {/* {employees ? employees.map( ({ gender }, index) => <h2 key={index}>{gender}</h2>) 
-          : 
-          <h1>No Results To Display</h1>} */}
+          <Button />
         </header>
     )
 }
@@ -37,5 +35,9 @@ const Header = ({ title }) => {
 //   color: "orange",
 //   backgroundColor: "black"
 // }
+
+/* {employees ? employees.map( ({ gender }, index) => <h2 key={index}>{gender}</h2>) 
+: 
+<h1>No Results To Display</h1>} */
 
 export default Header
