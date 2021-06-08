@@ -1,9 +1,11 @@
+import Task from "./Task"
+
 const Tasks = ({ tasks }) => {
     return (
         <>
-          {tasks.map(({ text, id }) => {
+          {tasks.map((task) => {
               return(
-                  <h3 key={id}>{text}</h3>
+                  <Task key={task.id} task={task}/>
               )
           })}
         </>
