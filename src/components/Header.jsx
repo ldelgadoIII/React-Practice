@@ -23,12 +23,17 @@ const Header = ({ title }) => {
 
     return (
         <header>
-          <h1>{title}</h1>
+          <h1 style={headingStyles}>{title}</h1>
           {employees ? employees.map( ({ gender }, index) => <h2 key={index}>{gender}</h2>) 
           : 
           <h1>No Results To Display</h1>}
         </header>
     )
+}
+
+const headingStyles = {
+  color: "orange",
+  backgroundColor: "black"
 }
 
 export default Header
