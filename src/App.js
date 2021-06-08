@@ -1,7 +1,7 @@
 import {BrowserRouter as Router} from "react-router-dom"
 import { useState } from "react";
 import Header from "./components/Header"
-import Task from "./components/Tasks"
+import Tasks from "./components/Tasks"
 
 function App() {
   const [tasks, setTasks] = useState([
@@ -25,11 +25,15 @@ function App() {
     },
 ]);
 
+  function deleteTask(id){
+    console.log("Task ID: ", id);
+  }
+
   return (
     <Router>
       <div className="container">
         <Header title="Tasks Tracked" />
-        <Task tasks={tasks} />
+        <Tasks tasks={tasks} onDelete={deleteTask}/>
       </div>
     </Router>
       
