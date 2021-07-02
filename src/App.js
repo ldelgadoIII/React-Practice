@@ -40,7 +40,7 @@ function App() {
     <Router>
       <div className="container">
         <Header title="Tasks Tracked" />
-        {tasks.length ? <Tasks tasks={tasks} onDelete={deleteTask}/>
+        {tasks.length ? <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder}/>
         : "No Tasks Remaining"}
       </div>
     </Router>
