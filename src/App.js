@@ -25,15 +25,23 @@ function App() {
     },
 ]);
 
+  // delete task
   function deleteTask(id){
     console.log("Task ID: ", id);
+    setTasks(tasks.filter( task => task.id !== id))
+  }
+
+  // toggle reminder
+  const toggleReminder = (id) => {
+    console.log(id)
   }
 
   return (
     <Router>
       <div className="container">
         <Header title="Tasks Tracked" />
-        <Tasks tasks={tasks} onDelete={deleteTask}/>
+        {tasks.length ? <Tasks tasks={tasks} onDelete={deleteTask}/>
+        : "No Tasks Remaining"}
       </div>
     </Router>
       
